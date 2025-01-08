@@ -92,7 +92,7 @@
                         <div class="text-bg">
                            <h1>software</h1>
                            <span>Vendor</span>
-                           <a class="read_more" href="#">About Us</a>
+                           <a class="read_more" href="https://motaungmandla.github.io">About Us</a>
                            <ul class="social_team">
                               <li><a href="https://www.facebook.com/profile.php?id=100022011589532"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
                               <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
@@ -302,7 +302,7 @@ At Motaung.inc™, we are passionate about technology and dedicated to deliverin
             </div>
          </div>
       </div>
-       end Our  team section -->
+   
       <!-- contact section -->
       <div id="contact" class="contact">
          <div class="container">
@@ -319,40 +319,26 @@ At Motaung.inc™, we are passionate about technology and dedicated to deliverin
             <div class="container-fluid">
                <div class="row">
                   <div class="col-md-6">
-                     <form id="request" class="main_form">
-                        <div class="row">
-                           <div class="col-md-12 ">
-                              <input class="contactus" placeholder="Name" type="type" name="Name"> 
-                           </div>
-                           <div class="col-md-12">
-                              <input class="contactus" placeholder="Email" type="type" name="Email"> 
-                           </div>
-                           <div class="col-md-12">
-                              <input class="contactus" placeholder="Phone Number" type="type" name="Phone Number">                          
-                           </div>
-                           <div class="col-md-12">
-                              <input class="contactusmess" placeholder="Message" type="type" Message="Name">
-                           </div>
-                           <div class="col-md-12">
-                              <button class="send_btn">Send</button>
-                           </div>
-                           <div class="col-md-12">
-                              <ul class="location_form">
-                                 <li><a href="#"><i class="fa fa-phone" aria-hidden="true"></i></a>
-                                 (+266) 63973129 <br/>  (+266) 56868951 <br/>
-                                 </li>
-                                 <li><a href="#"><i class="fa fa-envelope" aria-hidden="true"></i></a>maxphin21@gmail.com</li>
-                              </ul>
-                           </div>
-                           <div class="col-md-12">
-                              <ul class="social_icon">
-                                 <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                                 <li><a href="https://www.facebook.com/profile.php?id=100022011589532"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                                 <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-                              </ul>
-                           </div>
-                        </div>
+                     <form id="request" class="main_form" method="POST" action="/api/contact">
+                         <div class="row">
+                             <div class="col-md-12 ">
+                                 <input class="contactus" placeholder="Name" type="text" name="name"> 
+                             </div>
+                             <div class="col-md-12">
+                                 <input class="contactus" placeholder="Email" type="email" name="email"> 
+                             </div>
+                             <div class="col-md-12">
+                                 <input class="contactus" placeholder="Phone Number" type="text" name="phone">                          
+                             </div>
+                             <div class="col-md-12">
+                                 <input class="contactusmess" placeholder="Message" type="text" name="message">
+                             </div>
+                             <div class="col-md-12">
+                                 <button class="send_btn" type="submit">Send</button>
+                             </div>
+                         </div>
                      </form>
+
                   </div>
                   <div class="col-md-6 padding_right2">
                      <div class="map_section">
@@ -364,7 +350,7 @@ At Motaung.inc™, we are passionate about technology and dedicated to deliverin
             </div>
          </div>
       </div>
-      <!-- end contact section -->
+      
       <!-- testimonial section -->
       <div id="testimonial" class="testimonial">
          <div class="container">
@@ -539,6 +525,7 @@ At Motaung.inc™, we are passionate about technology and dedicated to deliverin
       </script>
       <!-- google map js -->
       <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA8eaHt9Dh5H57Zh0xVTqxVdBFCvFMqFjQ&callback=initMap"></script>
+      <script type="text/javascript" src="api/contact.js"></script>
       <!-- end google map js --> 
    </body>
 </html>
