@@ -10,12 +10,15 @@ module.exports = async (req, res) => {
 
         // Send notification email to you
         let transporter = nodemailer.createTransport({
-            service: 'gmail',
+            host: 'smtp.gmail.com',
+            port: 587,
+            secure: false, // Use TLS
             auth: {
                 user: 'zmmandla24@gmail.com',
-                pass: 'Pgun@jack24'
+                pass: 'YOUR_APP_PASSWORD' // Replace with a secure App Password
             }
-        });
+                });
+
 
         let mailOptions = {
             from: 'zmmandla24@gmail.com',
@@ -24,7 +27,15 @@ module.exports = async (req, res) => {
             text: `You have a new form submission:\nName: ${name}\nEmail: ${email}\nPhone: ${phone}\nMessage: ${message}`
         };
 
-        await transporter.sendMail(mailOptions);
+        try {
+            await transporter.sendMail(mailOptions);
+            await transporter.sendMail(autoReplyOptions);
+            res.status(200).json({ message: 'Form submitted successfully' });
+        } catch (error) {
+            console.error('Email Error:', error);
+            res.status(500).json({ message: 'Internal Server Error' });
+}
+
 
         // Send automatic response to the user
         let autoReplyOptions = {
